@@ -1,0 +1,240 @@
+/* Gallery Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--dark-color);
+}
+
+#galleryTitle {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.gallery-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.gallery-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: linear-gradient(135deg, #f5f3ff 0%, #e8e3ff 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-images img {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.gallery-counter {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+#imageCounter {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.portfolio-intro {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f3ff 0%, #e8e3ff 100%);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.portfolio-intro p {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .gallery-images {
+        min-height: 300px;
+    }
+
+    .gallery-images img {
+        max-height: 350px;
+    }
+
+    .prev, .next {
+        padding: 10px 15px;
+        font-size: 1.2rem;
+    }
+
+    #galleryTitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 15px;
+    }
+
+    .gallery-images {
+        min-height: 250px;
+        padding: 10px;
+    }
+
+    .gallery-images img {
+        max-height: 300px;
+    }
+
+    .prev, .next {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    .next {
+        right: 5px;
+    }
+
+    .close {
+        font-size: 1.5rem;
+        right: 15px;
+        top: 10px;
+    }
+}
