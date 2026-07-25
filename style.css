@@ -155,6 +155,29 @@ section p {
     color: var(--text-color);
 }
 
+/* Decorative Divider */
+.divider {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+    color: var(--primary-color);
+    letter-spacing: 10px;
+}
+
+.divider span {
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 /* About Section */
 #about {
     background: var(--light-color);
