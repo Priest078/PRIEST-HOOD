@@ -172,37 +172,47 @@ section p {
     background: var(--white);
 }
 
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
 .card {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
+    width: 250px;
+    min-height: 220px;
+    background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
+    border-radius: 15px;
+    padding: 20px;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 1rem;
-    display: inline-block;
-    width: calc(25% - 2rem);
-    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
-    transition: all 0.3s ease;
+    color: #fff;
+    box-sizing: border-box;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.5);
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: calc(50% - 2rem);
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        width: 100%;
-    }
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
 }
 
 /* Portfolio Section */
@@ -295,6 +305,10 @@ footer p {
     section h2 {
         font-size: 1.8rem;
     }
+
+    .card {
+        width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -308,5 +322,9 @@ footer p {
 
     .hero {
         padding: 4rem 1rem;
+    }
+
+    .card {
+        width: 90%;
     }
 }
