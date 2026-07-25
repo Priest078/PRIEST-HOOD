@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRIEST DESIGN</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
@@ -34,15 +35,31 @@
 
 <section id="services">
     <h2>My Services</h2>
-    <div class="card">Logo Design</div>
-    <div class="card">Flyer Design</div>
-    <div class="card">Brand Identity</div>
-    <div class="card">Social Media Design</div>
+    <div class="services-container">
+        <div class="card" onclick="openGallery('logo')">
+            <h3>Logo Design</h3>
+            <p>Click to view</p>
+        </div>
+        <div class="card" onclick="openGallery('flyer')">
+            <h3>Flyer Design</h3>
+            <p>Click to view</p>
+        </div>
+        <div class="card" onclick="openGallery('brand')">
+            <h3>Brand Identity</h3>
+            <p>Click to view</p>
+        </div>
+        <div class="card" onclick="openGallery('social')">
+            <h3>Social Media Design</h3>
+            <p>Click to view</p>
+        </div>
+    </div>
 </section>
 
 <section id="portfolio">
     <h2>Portfolio</h2>
-    <p>Your best designs will appear here.</p>
+    <div class="portfolio-intro">
+        <p>Click on any service above to view my design work</p>
+    </div>
 </section>
 
 <section id="contact">
@@ -56,5 +73,26 @@
     <p>© 2026 PRIEST DESIGN. All Rights Reserved.</p>
 </footer>
 
+<!-- Gallery Modal -->
+<div id="galleryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <h2 id="galleryTitle">Gallery</h2>
+        
+        <div class="gallery-container">
+            <div id="galleryImages" class="gallery-images">
+                <!-- Images will be loaded here -->
+            </div>
+            <button class="prev" onclick="prevImage()">&#10094;</button>
+            <button class="next" onclick="nextImage()">&#10095;</button>
+        </div>
+        
+        <div class="gallery-counter">
+            <span id="imageCounter">1 / 1</span>
+        </div>
+    </div>
+</div>
+
+<script src="portfolio.js"></script>
 </body>
 </html>
